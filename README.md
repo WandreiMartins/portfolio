@@ -1,2 +1,2 @@
-# portifolio
-Portifólio com meus principais projetos e um pouco sobre mim
+# portfolio
+Portfólio com meus principais projetos e um pouco sobre mim
