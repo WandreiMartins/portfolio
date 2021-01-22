@@ -6,7 +6,10 @@
   --cinzaPrimario:rgb(134, 134, 134);
   --cinzaSecundario:rgb(219, 219, 219);
   --margemContainer: 10px 10px 10px 10px;
-
+  --brancoPrimario:#f1f2f6;
+  --neum:linear-gradient(to right, rgb(49, 49, 49), rgb(65, 65, 65), rgb(80, 80, 80) );
+  --gradienteQuente: linear-gradient(to right, #d41818, #f25221);
+  
 }
 *{
   font-size: 16px;
@@ -22,6 +25,7 @@ html {
 body{
   min-width: 100%;
   min-height: 100vh;
+  background: var(--brancoPrimario);
   
 }
 
@@ -129,22 +133,25 @@ header ul li a:hover{
 }
 .sobreMim{
   width: 100%;
-  height: 700px;
+  height:auto;
+  background-color:var(--brancoPrimario);
 }
 .container{
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color:var(--brancoPrimario);
   color: black;
   padding: var(--margemContainer);
   display: flex;
   flex-wrap: wrap;
 }
 .curriculo{
-width: 100%;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 .curriculo button{
-  background-color: #fb6158;
+  background: #fb6158;
   width: 150px;
   height: 40px;
   display: block;
@@ -192,27 +199,26 @@ margin: 20px 10px 40px 20px;
 
 .projetos{
   width: 100%;
-  background-color: #005FB8;
-  background: url(img/wave.svg) no-repeat bottom center;
+  background:var(--brancoPrimario) url(img/wave.svg) no-repeat bottom center;
   overflow: hidden;
 
 }
 .projetos svg{
   width: 100%;
   margin-bottom: -40px;
+  
 
 }
 .container_01{
   max-width: 1200px;
   margin: 25px auto;
   padding: 10px;
-  background: url(img/wave.svg) no-repeat bottom center;
-  
 }
 .container_01 h3{
   color:#FFF;
   font-size: 1.5rem;
   margin: 15px;
+  text-shadow: 1px 1px 2px #000;
 }
 .cards{
   display: flex;
@@ -250,7 +256,6 @@ margin: 20px 10px 40px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 .atraz p{
   color: #fff;
@@ -263,6 +268,7 @@ margin: 20px 10px 40px 20px;
 }
 .atrazBtn button{
   background-color: #fb6158;
+
   width: 150px;
   height: 40px;
   display: block;
@@ -276,8 +282,6 @@ margin: 20px 10px 40px 20px;
   letter-spacing: 2px;
   border-radius: 5px;
 }
-
-
 
   
 .frente, .atraz{
@@ -294,18 +298,19 @@ box-shadow: 4px 4px 6px black;
   transform: rotateY(180deg);
 }
 
-
+/* Inicio tecnologias */
 .tecnologias{
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%; 
   padding: var(--margemContainer);
-  /* background: url(img/bg1.svg); */
+  background:var(--neum);
 }
 .tecnologias h3{
 font-size: 1.5rem;
 margin-bottom: 20px;
 }
 .container_02{
+  max-width:1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -313,10 +318,151 @@ margin-bottom: 20px;
 }
 
 .tecCards{
-  width: 300px;
-  max-width: 300px;
+  width: 200px;
+  max-width: 200px;
   height: 250px;
-  margin-bottom: 25px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--neum);
+  box-shadow: 3px 3px 6px rgb(26, 26, 26),
+              -3px -3px 6px rgb(168, 168, 168);
+  border-radius: 10px;
+  transform: rotateY(0deg);
+  transition: 0.2s linear;
+
+}
+.tecCards h3{
+  margin-top: 25px;
+  color: rgb(41, 40, 40);
+}
+.tecCards:hover{
+  transform: rotateY(20deg);
+}
+
+.img-svg{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-top: 15px;
+}
+.img-svg svg{
+  position: relative;
+  width: 150px;
+  height: 150px;
+
+}
+.img-svg svg circle{
+ transform: translate(5px, 5px);
+ fill: none;
+ stroke-width: 10;
+ 
+}
+.img-svg svg circle:nth-child(1){
+  stroke: rgb(163, 163, 163);
+}
+.img-svg svg circle:nth-child(2){
+  stroke: rgb(255, 50, 50);
+}
+.html svg circle:nth-child(2){
+  animation: animarHTML 1s linear both;
+}
+
+@keyframes animarHTML{
+  0%{
+    stroke-dasharray: 440;
+     stroke-dashoffset: 440;
+  }
+  100%{
+    stroke-dasharray: 267;
+     stroke-dashoffset: 0;
+  }
+}
+.css svg circle:nth-child(2){
+  animation: animarCSS 1s linear both;
+}
+@keyframes animarCSS{
+  0%{
+    stroke-dasharray: 440;
+     stroke-dashoffset: 440;
+  }
+  100%{
+    stroke-dasharray: 308;
+     stroke-dashoffset: 0;
+  }
+}
+.javascript svg circle:nth-child(2){
+  animation: animarJavascript 1s linear both;
+}
+@keyframes animarJavascript{
+  0%{
+    stroke-dasharray: 880;
+     stroke-dashoffset: 880;
+  }
+  100%{
+     stroke-dasharray: 880;
+     stroke-dashoffset: 704;
+  }
+}
+.bootstrap svg circle:nth-child(2){
+  animation: animarJavascript 1s linear both;
+}
+@keyframes animarJavascript{
+  0%{
+    stroke-dasharray: 880;
+     stroke-dashoffset: 880;
+  }
+  100%{
+     stroke-dasharray: 880;
+     stroke-dashoffset: 704;
+  }
+}
+.git svg circle:nth-child(2){
+  animation: animarGit 1s linear both;
+}
+@keyframes animarGit{
+  0%{
+    stroke-dasharray: 880;
+     stroke-dashoffset: 880;
+  }
+  100%{
+     stroke-dasharray: 880;
+     stroke-dashoffset: 660;
+  }
+}
+.img-svg .numero_00{
+  position:absolute;
+  top: -65px;
+  right:-16px;
+  width: 65px;
+  height: 32px;
+  padding: 5px;
+  border-radius: 2px;
+  transform: translate(0, 32px);
+  background:linear-gradient(to right, #d41818, #f25221);
+  box-shadow: 2px 2px 4px rgb(32, 32, 32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.img-svg .numero_00 span{
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.6;
+
+
+}
+.titulo_02 i{
+  transform: scale(5);
+  color: rgb(41, 40, 40);
+  /* margin: auto; */
+}
+.titulo_02{
+  display: inline-block;
+  transform: translate(69px, -84px);
+   
 }
 .estudos{
   width: 100%;
@@ -341,4 +487,21 @@ margin-bottom: 20px;
   width: 50%;
    min-width: 300px;
    color: #fff;
+}
+@media (max-width: 576px){
+  header nav ul a{
+    font-size: 12px;
+  }
+  .titulos_01{
+    margin: 0 auto;
+  }
+ .titulos_01 .titulo_00 h1{
+   font-size: 1.7em;
+ }
+ .titulos_01 .titulo_00 h2{
+   font-size: 1.5em;
+ }
+ .projetos{
+ background:var(--brancoPrimario) ;
+}
 }

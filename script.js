@@ -21,7 +21,7 @@
 //   })
 //   }
 // window.addEventListener('scroll', trocarCor)
-
+//menu de navegação
 let menu = document.querySelector('[data-menu]')
 const bg = 'menuNavegacao'
 
@@ -34,12 +34,12 @@ let trocarBg = () =>{
   }
 }
 window.addEventListener('scroll', trocarBg)
-
+//função para escrever o nome
 //efeito typing
 let index = 0
 let currentText = 'Desenvolvedor Web'
 let letter = ''
-// console.log(text.length)
+
 
 function type() {
 
@@ -57,7 +57,27 @@ function type() {
     }
   setTimeout(type, ret())
   
-  
-  // setInterval(type, 2000)
 }
 type()
+
+//função para carregar barra circular
+const skills = document.querySelectorAll(['[data-html]', '[data-css]', '[data-js]', '[data-bs]', '[data-git]' ])
+let contador = [0, 0, 0, 0, 0]
+let porc = [60, 70, 40, 40, 50]
+const tempo = [16, 14, 25, 25, 20]
+
+     function contagem(){ 
+for (let i =0; i<skills.length; i++){
+      setInterval(() => {
+          if(contador[i] == porc[i]){
+            clearInterval()
+          }else{
+            contador[i]++
+            skills[i].textContent = contador[i] + '%'
+          }
+        },tempo[i])
+
+      }      
+
+    }
+    contagem()  
