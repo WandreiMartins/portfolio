@@ -489,6 +489,9 @@ margin-bottom: 20px;
    color: #fff;
 }
 @media (max-width: 576px){
+  header{
+    background: cover;
+  }
   header nav ul a{
     font-size: 12px;
   }
