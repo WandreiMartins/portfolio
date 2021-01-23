@@ -38,8 +38,8 @@ header{
   background-size: cover;
 }
 header nav {
-  display: flex;
   z-index: 3;
+  display: flex;
   flex-direction: column;
   width: 100%;
   height: 0px;
@@ -488,13 +488,91 @@ margin-bottom: 20px;
    min-width: 300px;
    color: #fff;
 }
+
+
+#checkbox-menu{
+	position: absolute;
+  opacity: 0;
+  display: none;
+
+}
+ label{
+  display: none;
+	cursor: pointer;
+  position: fixed;
+  z-index: 10;
+	height: 60px;
+	width: 60px;
+	background: black;
+	border-radius: 50%;
+  background-color: rgba(124, 124, 124, 0.4);
+  top: 26px;
+	right: 30px;
+}
+.div-1{
+	position: relative;
+	top: 18px;
+  height: 25px;
+  z-index: 10;
+  
+  
+	
+}
+ label span{
+  position: relative;
+	display: block;
+	height: 2px;
+	width: 40px;
+  background: var(--cinzaSecundario);
+  margin: 0 auto;
+	transition: 0.25s ease-in-out;
+
+}
+ label span:nth-child(1){
+	top: 0;
+
+
+}
+ label span:nth-child(2){
+	top: 10px;
+
+}
+label span:nth-child(3){
+	top: 20px;
+
+	
+}
+
+#checkbox-menu:checked + label span:nth-child(1){
+	transform: rotate(-45deg);
+	top: 10px;
+}
+#checkbox-menu:checked + label span:nth-child(2){
+	opacity: 0;
+}
+#checkbox-menu:checked +  label span:nth-child(3){
+	transform: rotate(45deg);
+	top: 7px;
+}
+
+
+@media (max-width: 822px){
+  .titulos_01{
+    margin: 0 auto;
+  }
+ .titulos_01 .titulo_00 h1{
+   font-size: 3em;
+ }
+ .titulos_01 .titulo_00 h2{
+   font-size: 2.5em;
+ }
+}
+
+
+
+
 @media (max-width: 576px){
-  header{
-    background: cover;
-  }
-  header nav ul a{
-    font-size: 12px;
-  }
+
   .titulos_01{
     margin: 0 auto;
   }
@@ -506,5 +584,32 @@ margin-bottom: 20px;
  }
  .projetos{
  background:var(--brancoPrimario) ;
+}
+.containerH{
+  display: block;
+}
+header{
+  position: relative;
+}
+header nav{
+  background-color:  rgba(14, 14, 14, 0.5);
+  height: 100%;
+  width: 200px;
+}
+header nav ul{
+  flex-direction:column ;
+  margin: 0 auto;
+}
+header label{
+  display: block;
+}
+nav{
+  left: -100%;
+  transition: 0.5s;
+}
+#checkbox-menu:checked ~ nav{
+  position: fixed;
+  left: 0;
+  
 }
 }

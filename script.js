@@ -21,20 +21,24 @@
 //   })
 //   }
 // window.addEventListener('scroll', trocarCor)
-//menu de navegação
-let menu = document.querySelector('[data-menu]')
-const bg = 'menuNavegacao'
 
-let trocarBg = () =>{
-  const windowTop = window.pageYOffset
-  if (windowTop > 60){
-    menu.classList.add(bg)
-  }else{
-    menu.classList.remove(bg)
-  }
-}
-window.addEventListener('scroll', trocarBg)
-//função para escrever o nome
+
+//menu de navegação ----------------------------------------
+// let menu = document.querySelector('[data-menu]')
+// const bg = 'menuNavegacao'
+
+// let trocarBg = () =>{
+//   const windowTop = window.pageYOffset
+//   if (windowTop > 60){
+//     menu.classList.add(bg)
+//   }else{
+//     menu.classList.remove(bg)
+//   }
+// }
+// window.addEventListener('scroll', trocarBg)
+
+
+//função para escrever o nome -----------------------------------
 //efeito typing
 let index = 0
 let currentText = 'Desenvolvedor Web'
@@ -81,3 +85,17 @@ for (let i =0; i<skills.length; i++){
 
     }
     contagem()  
+
+
+    //função hamburguer------------------------------------------------------------
+  //  let navMenu = document.querySelector('[data-menu]')
+  //  let check = document.querySelector('[data-check]').checked
+  //  console.log(check)
+  //   function moverMenu(){
+  //       if(check = true){
+  //         navMenu.classList.remove('esconder')
+  //       }else{
+  //         navMenu.classList.add('esconder')
+  //       }
+  //   }
+   
